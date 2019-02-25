@@ -15,4 +15,11 @@ function dbConnect(){
     }
 }
 
+function dbQuery($query){
+  $connection = dbConnect();
+  $result = mysqli_query($connection, $query);
+
+  return $result;
+}
+
 ?>

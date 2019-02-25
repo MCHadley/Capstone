@@ -1,7 +1,15 @@
 <?php
-include ('functions.php');
+include ('dbClass.php');
 
-$connection = dbConnect();
+$db = new Db();
+
+$select = $db -> select("SELECT * FROM users");
+
+if($select == 'mchadley'){
+  echo("Hello Michael");
+}
+
+
 
 
 ?>
