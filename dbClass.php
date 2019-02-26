@@ -25,7 +25,8 @@ class Db {
     // run query result
     $row = mysqli_fetch_assoc($result);
     // return data you want
-    return $row['username'];
+    return $row;
+    return key($row);
     
   }
 

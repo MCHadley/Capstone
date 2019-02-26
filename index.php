@@ -9,7 +9,7 @@ if($select == 'mchadley'){
   echo("Hello Michael");
 }
 
-
+echo implode("," ,$select);
 
 
 ?>
