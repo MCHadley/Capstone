@@ -18,7 +18,7 @@ class Db {
   }
   // SQL Select func
   public function select($query){
-    // connect to DB
+    // connect DB
     $conn = $this -> connect();
     // create query
     $result = mysqli_query($conn, $query);
