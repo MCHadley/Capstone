@@ -26,9 +26,9 @@ class Db {
     $row = mysqli_fetch_assoc($result);
     // return data you want
     return $row;
-    return key($row);
-    
+     
   }
+
   // Sanitize SQL input
   public function clean($data){
     // connect to DB
