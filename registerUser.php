@@ -18,7 +18,7 @@ $queryIn = "INSERT INTO users(username, password, firstName, lastName, email)";
 $queryVa = "VALUES('".$userSan."','".$passSan."','".$firstSan."','".$lastSan."','".$emailsSan."')";
 $queryFinal = $queryIn.$queryVa;
 $db->insert($queryFinal);
-// echo($queryFinal);
+
 
 
 ?>
