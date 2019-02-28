@@ -19,15 +19,37 @@ class Db {
 
   public function select($query){
     
-    $connection = $this -> connect();
+    $conn = $this -> connect();
     // create query
-    $result = mysqli_query($connection, $query);
+    $result = mysqli_query($conn, $query);
     // run query result
     $row = mysqli_fetch_assoc($result);
     // return data you want
     return $row;
     return key($row);
     
+  }
+
+  public function clean($data){
+    // connect to DB
+    $conn = $this->connect();
+    // sanitize data
+    $sanData = mysqli_real_escape_string($conn, $data);
+    return $sanData;
+  }
+
+
+  public function insert($statement){
+    // connect to DB
+    $conn = $this->connect();
+    // run santize func
+    // insert data
+    if(mysqli_query($conn, $statement) === TRUE){
+      echo "Record Created";
+    }else{
+      echo "Error: ".$statement."<br>".$conn->error;
+    } 
+    $conn->close();
   }
 
 }
