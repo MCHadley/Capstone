@@ -16,7 +16,7 @@ class Db {
     }
  
   }
-
+  // SQL Select func
   public function select($query){
     
     $conn = $this -> connect();
@@ -29,7 +29,7 @@ class Db {
     return key($row);
     
   }
-
+  // Sanitize SQL input
   public function clean($data){
     // connect to DB
     $conn = $this->connect();
@@ -38,7 +38,7 @@ class Db {
     return $sanData;
   }
 
-
+  // SQL Input func
   public function insert($statement){
     // connect to DB
     $conn = $this->connect();
