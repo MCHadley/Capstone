@@ -11,7 +11,7 @@ $email = $_POST['email'];
 $pass = $_POST['password'];
 
 // hash password
-$options = ['cost' => 12, 'salt' => 'doorsofdurinmellonfriend'];
+$options = ['cost' => 12, 'salt'];
 $passSecure = password_hash($pass, PASSWORD_BCRYPT, $options);
 
 // sanitize data
