@@ -39,13 +39,13 @@ class Db {
   }
 
   // SQL Input func
-  public function insert($statement){
+  public function insert($statement, $message){
     // connect to DB
     $conn = $this->connect();
     // run santize func
     // insert data
     if(mysqli_query($conn, $statement) === TRUE){
-      echo "Record Created";
+      echo ($message);
     }else{
       echo "Error: ".$statement."<br>".$conn->error;
     } 
