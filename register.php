@@ -2,6 +2,7 @@
 include('dbClass.php');
 // New database connection
 $db = new Db();
+// Errors array
 $errors = array();
 
 // user variables
