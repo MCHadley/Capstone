@@ -42,7 +42,6 @@ if(isset($_POST['logBtn'])){
   }else{
     echo 'Incorrect Login';
   }
-
 }
 
 ?>
