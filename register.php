@@ -41,7 +41,6 @@ if(isset($_POST['regSubmit'])){
     echo implode('<br>', $errors);
   }
   // hash password
-  // $options = ['cost' => 12, 'salt'];
   $passSecure = password_hash($pass, PASSWORD_BCRYPT);
 
   // Register user if no errors
