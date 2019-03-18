@@ -22,18 +22,22 @@ if(isset($_POST['logBtn'])){
   echo implode("<br>", $errors);
 
   // create login query and run query
-  $stmt = $mysqli->prepare('SELECT username, password FROM users WHERE username = ? LIMIT 1');
+  $stmt = $mysqli->prepare('SELECT id, username, password FROM users WHERE username = ? LIMIT 1');
   $stmt -> bind_param('s', $userSan);
   $stmt -> execute();
   $stmt -> store_result();
-  $stmt -> bind_result($usrName, $hash);
+  $stmt -> bind_result($id, $usrName, $hash);
   $stmt -> fetch();
 
   // Check if user exists, if not error message, if so check password
   if(!$usrName){
     echo 'That user does not exist';
   }elseif(password_verify($passSan, $hash)){
-    echo 'You have logged in';
+    session_regenerate_id();
+    $_SESSION['loggedin'] = TRUE;
+    $_SESSION['name'] = $usrName;
+    $_SESSION['id'] = $id;
+    echo 'Welcome '.$_SESSION['name'].'!';
   }else{
     echo 'Incorrect Login';
   }
