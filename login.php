@@ -2,6 +2,7 @@
 // Include database class and create new instance
 include('dbClass.php');
 $db = new Db();
+$mysqli = $db->connect();
 //Start session
 session_start();
 // Errors array
@@ -17,22 +18,34 @@ if(isset($_POST['logBtn'])){
   $passSan = $db->clean($pass);
 
   if(empty($username)){array_push($errors, "Please enter a username");}
-  if(empty($pass)){array_pusy($errors, "Please enter a password");}
+  if(empty($pass)){array_push($errors, "Please enter a password");}
   echo implode("<br>", $errors);
 
   // create login query and run query
-  $query = "SELECT username, password FROM users WHERE username ='".$userSan."'";
-  $result = $db -> select($query);
-  $passCheck = $result['password'];
+  $stmt = $mysqli->prepare('SELECT username, password FROM users WHERE username = ? LIMIT 1');
+  $stmt -> bind_param('s', $userSan);
+  $stmt -> execute();
+  $stmt -> store_result();
+  $stmt -> bind_result($usrName, $hash);
+  $stmt -> fetch();
+
+  // Check if user exists, if not error message, if so check password
+  if(!$usrName){
+    echo 'That user does not exist';
+  }elseif(password_verify($passSan, $hash)){
+    echo 'You have logged in';
+  }else{
+    echo 'Incorrect Login';
+  }
 
 }
 
 
 
 //If no user found error
-if(!$result){
-  exit('You have entered in incorrect login information, please try again');
-  echo('<p><a href="login.html">Return to login page</a></p>');
-}
+// if(!$result){
+//   exit('You have entered in incorrect login information, please try again');
+//   echo('<p><a href="login.html">Return to login page</a></p>');
+// }
 
 ?>

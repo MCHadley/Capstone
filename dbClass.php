@@ -42,7 +42,6 @@ class Db {
   public function insert($statement, $message){
     // connect to DB
     $conn = $this->connect();
-    // run santize func
     // insert data
     if(mysqli_query($conn, $statement) === TRUE){
       echo ($message);
