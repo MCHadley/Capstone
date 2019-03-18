@@ -31,7 +31,8 @@ if(isset($_POST['logBtn'])){
 
   // Check if user exists, if not error message, if so check password
   if(!$usrName){
-    echo 'That user does not exist';
+    exit('You have entered in incorrect login information, please try again');
+    echo('<p><a href="login.html">Return to login page</a></p>');
   }elseif(password_verify($passSan, $hash)){
     session_regenerate_id();
     $_SESSION['loggedin'] = TRUE;
@@ -43,13 +44,5 @@ if(isset($_POST['logBtn'])){
   }
 
 }
-
-
-
-//If no user found error
-// if(!$result){
-//   exit('You have entered in incorrect login information, please try again');
-//   echo('<p><a href="login.html">Return to login page</a></p>');
-// }
 
 ?>
