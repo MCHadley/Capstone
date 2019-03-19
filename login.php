@@ -39,7 +39,6 @@ if(isset($_POST['logBtn'])){
     $_SESSION['name'] = $usrName;
     $_SESSION['id'] = $id;
     echo 'Welcome '.$_SESSION['name'].'!';
-    echo $_SESSION['id'];
   }else{
     echo 'Incorrect Login';
   }
