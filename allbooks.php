@@ -19,6 +19,8 @@ $stmt->bind_param('i', $id);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
-$stmt->fetch();
+while($stmt->fetch()){
+  printf("%s (%s)<br>\n", $title, $authorFirst." ".$authorLast);
+}
 
 ?>
