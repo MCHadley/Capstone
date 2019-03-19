@@ -9,7 +9,7 @@ $user = $_SESSION['name'];
 $db = new Db();
 // create connect var for prepared stmts
 $connect = $db->connect();
-// prepared statments for pulling users book list
+// prepared statments for pulling users read list
 $stmt = $connect->prepare(
 'SELECT books.title, authors.authorFirst, authors.authorLast, books.description, status.status, books.dateAdded, books.dateRead 
 from books INNER JOIN status on status.book_id = books.book_id 
