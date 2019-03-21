@@ -4,7 +4,7 @@ class Db {
   public function connect() {
     static $connection;
     if(!isset($connection)){
-    $config = parse_ini_file('config.ini');
+    $config = parse_ini_file('./config.ini');
     $connection = mysqli_connect('localhost', $config['username'], $config['password'], $config['dbname']);
     }
     if($connection === false){
