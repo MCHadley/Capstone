@@ -1,6 +1,9 @@
 <?php
 //database class
 include('dbClass.php');
+include('header.php');
+include('navbar.php');
+include('footer.php');
 //Start session and grab variables
 session_start();
 $id = $_SESSION['id'];
@@ -20,7 +23,7 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
 while($stmt->fetch()){
-  printf("%s (%s)<br>\n", $title, $authorFirst." ".$authorLast);
+  printf("<p>%s (%s)</p>\n", $title, $authorFirst." ".$authorLast);
 }
 
 ?>
