@@ -1,5 +1,5 @@
 <?php
-include('dbClass.php');
+include('includes/dbClass.php');
 // New database connection
 $db = new Db();
 // Errors array
