@@ -19,8 +19,19 @@ $stmt->bind_param('i', $id);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
+echo('<table><tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date Added</th>
+      </tr>');
 while($stmt->fetch()){
-  printf("%s (%s)<br>\n", $title, $authorFirst." ".$authorLast);
+  //Concat author name
+  $authorName = $authorFirst." ".$authorLast;
+  printf("<tr>
+            <td>%s</td>
+            <td>%s</td>
+            <td>%s</td>
+          </tr>", $title, $authorName, $dateAdded);
 }
 
 ?>
