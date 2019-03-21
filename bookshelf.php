@@ -1,8 +1,8 @@
 <?php
 // Includes
-include('header.php');
-include('navbar.php');
-include('footer.php');
-include('booklist.php');
+include('includes/header.php');
+include('includes/navbar.php');
+include('includes/booklist.php');
+include('includes/footer.php');
 
 ?>
