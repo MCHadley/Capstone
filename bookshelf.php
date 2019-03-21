@@ -22,8 +22,36 @@ $stmt->bind_param('i', $id);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
+//Create and print table with booklist
+echo('<table><tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Shelf</th>
+      <th>Date Added</th>
+      <th>Date Read</th>
+      </tr>');
 while($stmt->fetch()){
-  printf("<p>%s (%s)</p>\n", $title, $authorFirst." ".$authorLast);
+  //Concat author name
+  $authorName = $authorFirst." ".$authorLast; 
+  // Change status into shelf name
+  if($status == 1){
+    $shelf = 'Read';
+  }elseif($status == 2){
+    $shelf = 'Currently Reading';
+  }elseif($status == 3){
+    $shelf = 'To-Read';
+  }
+  printf("
+            <tr>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+            </tr>
+          ", 
+          $title, $authorName, $shelf, $dateAdded, $dateRead);
 }
+echo('</table>')
 
 ?>
