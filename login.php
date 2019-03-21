@@ -38,7 +38,8 @@ if(isset($_POST['logBtn'])){
     $_SESSION['loggedin'] = TRUE;
     $_SESSION['name'] = $usrName;
     $_SESSION['id'] = $id;
-    echo 'Welcome '.$_SESSION['name'].'!';
+    // echo 'Welcome '.$_SESSION['name'].'!';
+    header('Location: index.php');
   }else{
     echo 'Incorrect Login';
   }
