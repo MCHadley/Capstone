@@ -52,6 +52,5 @@ while($stmt->fetch()){
           ", 
           $title, $authorName, $shelf, $dateAdded, $dateRead);
 }
-echo('</table>')
-
+echo('</table>');
 ?>
