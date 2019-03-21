@@ -1,6 +1,6 @@
 <?php
 //database class
-include('includes/dbClass.php');
+include('dbClass.php');
 //Start session and grab variables
 session_start();
 $id = $_SESSION['id'];

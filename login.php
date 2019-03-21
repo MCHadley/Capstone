@@ -1,6 +1,6 @@
 <?php
 // Include database class and create new instance
-include('includes/dbClass.php');
+include('dbClass.php');
 $db = new Db();
 $mysqli = $db->connect();
 //Start session
