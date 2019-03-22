@@ -20,6 +20,10 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
 //Create and print table with booklist
+echo('<a href="#" class="allbooks">All Books</a>
+<a href="#" class="read">Read</a>
+<a href="#" class="reading">Reading</a>
+<a href="#" class="toread">To-Read</a>');
 echo('<table><tr>
       <th>Title</th>
       <th>Author</th>
