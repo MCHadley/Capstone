@@ -8,6 +8,10 @@ function loginDrop(){
     $(this).toggleClass('inactive');
     $(this).next('#login-content').slideToggle();          
   });
+  $('#logout').delay(2000).slideUp();
+  $('#login p').click(function(){
+    $('#logout').slideToggle();
+  });
 }
 
 function sortTable(){

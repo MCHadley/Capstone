@@ -8,14 +8,14 @@ if(!$_SESSION['loggedin']){
   echo ('<a id="login-trigger" href="#">Log in/Register</a>
           <div id="login-content">
             <form action="./login.php" method="POST">
-              <input id="username" type="username" name="username" placeholder="Username" required>
+              <input id="username" type="username" name="username" placeholder="Username" required><br>
               <input type="password" id="password" name="password" placeholder="Password" required><br>
               <input type="submit" id="logBtn" name="logBtn" value="Log in">
             </form>
             <a href="register.html">Register</a>
           </div>');
 }else{
-  echo '<p>Welcome '.$_SESSION['name'].'<br><form method="POST" action="logout.php"><input type="submit" value="Logout" name="logout" class="btn"></form></p>';
+  echo '<p>Welcome '.$_SESSION['name'].'<br><form method="POST" action="logout.php" id="logout"><input type="submit" value="Logout" name="logout" class="btn"></form></p>';
 }
 
 ?>
