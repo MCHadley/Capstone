@@ -22,11 +22,11 @@ if(isset($_POST['logBtn'])){
   echo implode("<br>", $errors);
 
   // create login query and run query
-  $stmt = $mysqli->prepare('SELECT id, username, password FROM users WHERE username = ? LIMIT 1');
+  $stmt = $mysqli->prepare('SELECT id, username, password, type FROM users WHERE username = ? LIMIT 1');
   $stmt -> bind_param('s', $userSan);
   $stmt -> execute();
   $stmt -> store_result();
-  $stmt -> bind_result($id, $usrName, $hash);
+  $stmt -> bind_result($id, $usrName, $hash, $level);
   $stmt -> fetch();
 
   // Check if user exists, if not error message, if so check password
@@ -38,6 +38,7 @@ if(isset($_POST['logBtn'])){
     $_SESSION['loggedin'] = TRUE;
     $_SESSION['name'] = $usrName;
     $_SESSION['id'] = $id;
+    $_SESSION['level'] = $level;
     // echo 'Welcome '.$_SESSION['name'].'!';
     header('Location: index.php');
   }else{
