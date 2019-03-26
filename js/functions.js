@@ -8,7 +8,6 @@ function loginDrop(){
     $(this).toggleClass('inactive');
     $(this).next('#login-content').slideToggle();          
   });
-  $('#logout').delay(2000).slideUp();
   $('#login p').click(function(){
     $('#logout').slideToggle();
   });
@@ -25,14 +24,14 @@ function sortTable(){
   });
   $('.reading').click(function(){
     $('table').find('tr').each(function(){
-      $('tr').show();
-      $('tr:contains("To-Read")').hide();
+      $('tr').not(':first-of-type').hide();
+      $('tr:contains("Reading")').show();
     });
   });
   $('.toread').click(function(){
     $('table').find('tr').each(function(){
-      $('tr').show();
-      $('tr:contains("Currently Reading")').hide();
+      $('tr').not(':first-of-type').hide();
+      $('tr:contains("To-Read")').show();
     });
   });
 }
