@@ -18,6 +18,7 @@ function sortTable(){
     $('tr').show();
   });
   $('.read').click(function(){
+    $('tr').show();
     $('table').find('tr').each(function(){
       $('tr:contains("Currently Reading"), tr:contains("To-Read")').hide();
     }); 
