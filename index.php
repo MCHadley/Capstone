@@ -17,9 +17,6 @@ include('includes/dbClass.php');
       <input type="submit" value="Search" name="submit" class="btn">
     </form>
   </div>
-  <div class="body-four">
-  </div>
-</div>
 <?php
 if(isset($_POST['submit'])){
   $db = new Db();
@@ -48,7 +45,9 @@ if(isset($_POST['submit'])){
 }
 echo('</table>');
 }else{
-  echo("<p>Please input a search query</p>");
+  
 }
-
 ?>
+<div class="body-four">
+  </div>
+</div>
