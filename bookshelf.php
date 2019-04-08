@@ -2,6 +2,7 @@
 // Includes
 include('includes/header.php');
 include('includes/navbar.php');
+include('search.php');
 if(!$_SESSION['loggedin']){
   echo "<p>Please login or create an account to view your booklist</p>";
 }else{

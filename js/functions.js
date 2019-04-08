@@ -1,6 +1,7 @@
 $(document).ready(function(){
  loginDrop();
  sortTable();
+ activePage()
 });
 
 function loginDrop(){
@@ -34,5 +35,14 @@ function sortTable(){
       $('tr').not(':first-of-type').hide();
       $('tr:contains("To-Read")').show();
     });
+  });
+}
+
+function activePage(){
+  var url = window.location.pathname;
+  var link = url.substr(url.lastIndexOf('/') + 1);
+  $('.navLinks').find('a').each(function(){
+    if($(this).attr('href') == link){
+      $(this).addClass('active');}
   });
 }

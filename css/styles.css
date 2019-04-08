@@ -51,6 +51,12 @@ nav {
   padding: 1em 1em;
 }
 
+.navLinks:active {
+  color: white;
+  border: 1px solid white;
+  padding: 1em 1em;
+}
+
 nav li {
   list-style-type: none;
 }
@@ -85,6 +91,3 @@ nav li {
   text-decoration: none;
 }
 
-.navLinks:active {
-  color: #56797E;
-}
