@@ -1,4 +1,6 @@
 <?php
+include('includes/header.php');
+include('includes/navbar.php');
 // Include database class and create new instance
 include('includes/dbClass.php');
 $db = new Db();

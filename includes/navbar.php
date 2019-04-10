@@ -1,16 +1,16 @@
 <header>
-  <nav class="container">
+  <nav class="container navLinks">
     <div class="one">
-      <li><a href="index.php" class="navLinks">Home</a></li>
+      <li><a href="index.php">Home</a></li>
     </div>
     <div class="two">
-      <li><a href="bookshelf.php" class="navLinks">Bookshelf</a></li>
+      <li><a href="bookshelf.php">Bookshelf</a></li>
     </div>
     <div class="logo">
       <p>BookHub</p>
     </div>
     <div class="three">
-      <li><a href="#" class="navLinks">Forums</a></li>
+      <li><a href="#">Forums</a></li>
     </div>
     <div class="four">
       <ul>

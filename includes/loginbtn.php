@@ -12,7 +12,7 @@ if(!$_SESSION['loggedin']){
               <input type="password" id="password" name="password" placeholder="Password" required><br>
               <input type="submit" id="logBtn" name="logBtn" value="Log in">
             </form>
-            <a href="register.html">Register</a>
+            <a href="register.php">Register</a>
           </div>');
 }else{
   echo '<p>Welcome '.$_SESSION['name'].'<br><form method="POST" action="logout.php" id="logout"><input type="submit" value="Logout" name="logout" class="btn"></form></p>';

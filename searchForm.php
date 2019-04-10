@@ -10,7 +10,7 @@ $connect = $db->connect();
 if(isset($_POST['submit'])){
   //input from form, sanitize input, format it for SQL Query
   // $input = $_POST['searchBox'];
-  $input = 'Wallace';
+  $input = $_POST['searchBox'];
   $querySan = $db->clean($input);
   $formatQ = '%'.$querySan.'%';
   // SQL Prepared query for id, title, and author. Print query with checkbox and dropdown box to add book to shelf and select reading status
@@ -35,11 +35,11 @@ if(isset($_POST['submit'])){
     $count++;
     $authorName = $list['authorFirst']." ".$list['authorLast'];
     echo('<tr>
-            <td><input type="checkbox" value='.$list['book_id'].' id="id" name="book_id'.$count.'"></td>
+            <td><input type="hidden" value='.$list['book_id'].' id="id" name="id[]"></td>
             <td>'.$list['title'].'</td>
             <td>'.$authorName.'</td>
-            <td><select name="status'.$count.'">
-              <option></option>
+            <td><select name="status[]">
+              <option value="0"></option>
               <option value="1">Read</option>
               <option value="2">Reading</option>
               <option value="3">To-Read</option>

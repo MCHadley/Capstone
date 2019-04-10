@@ -6,15 +6,22 @@ $count = 0;
 $formElements = $_POST;
 
 // foreach($formElements as $key => $val){
-//   echo $val. " ";
-  
+//   // $formElements = array();
+//   // print_r($formElements['id']);
 // }
 
-var_dump($_POST);
+var_dump($formElements['id']);
+var_dump($formElements['status']);
+
+// var_dump($_POST['id'], );
+
+
+
 
 // foreach($_POST as $key => $val){
 //   $count++;
 //   $formElements[] = $val;
+//   echo($formElements);
    
 // }
 

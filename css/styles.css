@@ -35,7 +35,7 @@ nav {
   grid-column: 5;
 }
 
-.navLinks {
+.navLinks a {
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.2em;
   font-weight: lighter;
@@ -44,17 +44,17 @@ nav {
   color: #F2F0C9;
 }
 
-.navLinks:hover {
+.navLinks a:hover {
   color: white;
   border-left: 1px solid white;
   border-right: 1px solid white;
   padding: 1em 1em;
 }
 
-.navLinks:active {
+.navLinks .active {
   color: white;
-  border: 1px solid white;
-  padding: 1em 1em;
+  border: 0.5px solid white;
+  padding: 3px 3px;
 }
 
 nav li {
@@ -76,6 +76,21 @@ nav li {
 
 #login-content {
   display: none;
+}
+
+#login-content a {
+  text-transform: none;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+input[type=submit] {
+  background-color:#F2F0C9;
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 10px;
+  padding: 9px 9px;
+  text-align: center;
 }
 
 #login-trigger {

@@ -41,7 +41,7 @@ function sortTable(){
 function activePage(){
   var url = window.location.pathname;
   var link = url.substr(url.lastIndexOf('/') + 1);
-  $('.navLinks').find('a').each(function(){
+  $('.navLinks a').each(function(){
     if($(this).attr('href') == link){
       $(this).addClass('active');}
   });
