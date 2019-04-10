@@ -1,7 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500"');
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
 
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input:focus::-webkit-input-placeholder{
+  color: transparent!important;
+}
+input:focus::-moz-placeholder{
+  color: transparent!important;
+}
+input:focus:-moz-placeholder{
+  color: transparent!important;
+}
+
+.body-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  grid-gap: 1em;
 }
 
 nav {
@@ -13,6 +32,10 @@ nav {
   text-align: center;
   border-bottom: 4px solid black;
   background:  #21333F;
+}
+
+nav ul {
+  padding: 0;
 }
 
 .one {
@@ -35,8 +58,60 @@ nav {
   grid-column: 5;
 }
 
+.body-one {
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.body-one form {
+  background-color: rgb(201, 218, 230);
+  border: 1px solid rgb(137, 160, 175);
+  display: inline-block;
+  margin-bottom: 300px;
+  padding: 50px;
+}
+
+.body-two {
+  align-items: center;
+  text-align: center;
+}
+
+.body-three {
+  align-items: center;
+  grid-row: 2;
+  width: auto;
+}
+
+.body-three table {
+  margin: auto;
+}
+
+.body-three form {
+  text-align: center;
+}
+.body-four {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.body-four table {
+  margin: auto;
+}
+
+.body-eight {
+  align-items: center;
+  grid-column: 2;
+  grid-row: 3;
+  width: 700px;
+}
+
+.body-eight table {
+  padding-left: 100px;
+}
+
 .navLinks a {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   font-weight: lighter;
   text-transform: uppercase;
@@ -54,7 +129,7 @@ nav {
 .navLinks .active {
   color: white;
   border: 0.5px solid white;
-  padding: 3px 3px;
+  padding: 1em 1em;
 }
 
 nav li {
@@ -62,7 +137,7 @@ nav li {
 }
 
 #login {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   text-transform: uppercase;
   color: #F2F0C9;
@@ -87,7 +162,7 @@ nav li {
 input[type=submit] {
   background-color:#F2F0C9;
   border: none;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 10px;
   padding: 9px 9px;
   text-align: center;
@@ -95,14 +170,46 @@ input[type=submit] {
 
 #login-trigger {
   text-decoration: none;
+  font-size: 1.1em;
 }
 
-.logo p {
+#searchBox {
+  width: 200px;
+}
+
+.logo {
   color: #F2F0C9;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  /* font-weight: bold; */
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 1.7em;
   text-decoration: none;
 }
 
+.logo p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.register input {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.sort {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sort a {
+  border: 2px solid rgb(100, 167, 223);
+  background-color: #F2F0C9;
+  font-weight: bold;
+  color: rgb(22, 79, 126);
+  padding: 10px;
+  text-decoration: none;
+}
+
+td {
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -4,21 +4,22 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 <html>
-  <head>User Registeration</head>
   <body>
+    <div class="body-one">
     <h1>User Registeration</h1>
-    <form method="post" action="registerScript.php">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" class="form-control"><br>
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" class="form-control"><br>
-      <label for="userName">Username:</label>
-      <input type="text" id="userName" name="userName" class="form-control"><br>
-      <label for="email">Email: </label>
-      <input type="email" id="email" name="email" class="form-control"><br>
-      <label for="password">Password:</label> 
-      <input type="password" id="password" name="password" class="form-control"><br>
-      <input type="submit" value="submit" name="regSubmit" class="btn">
+    <form method="post" action="registerScript.php" class="register">
+      <label for="firstName" hidden>First Name:</label>
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" class="form-control"><br>
+      <label for="lastName" hidden>Last Name:</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-control"><br>
+      <label for="userName" hidden>Username:</label>
+      <input type="text" id="userName" name="userName" placeholder="Username" class="form-control"><br>
+      <label for="email" hidden>Email: </label>
+      <input type="email" id="email" name="email" placeholder="Email Address" class="form-control"><br>
+      <label for="password" hidden>Password:</label> 
+      <input type="password" id="password" name="password" placeholder="Password" class="form-control"><br>
+      <input type="submit" value="Register" name="regSubmit" class="btn">
     </form>
+    </div>
   </body>
 </html>

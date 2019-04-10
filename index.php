@@ -5,12 +5,12 @@ include('includes/footer.php');
 include('includes/dbClass.php');
 ?>
 <div class="body-container">
-  <div class="body-two">
+  <div class="body-one">
     <h1>Welcome to BookHub</h1>
     <p>BookHub is a simple way to keep track of the books you are reading along with a community.</p>
     <p>Books are added by users and you can add them to your lists!</p>
   </div>
-  <div class="body-three">
+  <div class="body-two">
     <form method="POST" action="">
       <input type="text" id="searchBox" name="searchBox" class="form-control"
         placeholder="Search for a book by title or author!">
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
   $stmt->execute();
   $stmt->store_result();
   $stmt->bind_result($title, $authorFirst, $authorLast);
-  echo('<table><tr>
+  echo('<div class="body-four"><table><tr>
           <th>Title</th>
           <th>Author</th>
         </tr>');
@@ -43,11 +43,9 @@ if(isset($_POST['submit'])){
             <td>%s</td>
           </tr>", $title, $authorName);
 }
-echo('</table>');
+echo('</table></div>');
 }else{
   
 }
 ?>
-<div class="body-four">
-  </div>
 </div>

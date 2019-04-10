@@ -5,7 +5,7 @@ session_start();
 error_reporting(0);
 // If the session is not logged in print logged in button, if logged in show users name and logout button
 if(!$_SESSION['loggedin']){
-  echo ('<a id="login-trigger" href="#">Log in/Register</a>
+  echo ('<a id="login-trigger" href="#">Log-in/Register</a>
           <div id="login-content">
             <form action="./login.php" method="POST">
               <input id="username" type="username" name="username" placeholder="Username" required><br>

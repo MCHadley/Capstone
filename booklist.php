@@ -19,11 +19,15 @@ $stmt->bind_param('i', $id);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
+?>
+
+<div class="body-three">
+<?
 //Create and print table with booklist
-echo('<a href="#" class="allbooks">All Books</a>
+echo('<div class="sort"><a href="#" class="allbooks">All Books</a>
       <a href="#" class="read">Read</a>
       <a href="#" class="reading">Reading</a>
-      <a href="#" class="toread">To-Read</a>');
+      <a href="#" class="toread">To-Read</a></div>');
 echo('<table><tr>
       <th>Title</th>
       <th>Author</th>
@@ -53,5 +57,5 @@ while($stmt->fetch()){
           ", 
           $title, $authorName, $shelf, $dateAdded, $dateRead);
 }
-echo('</table>');
+echo('</table></div>');
 ?>
