@@ -18,4 +18,8 @@ if(!$_SESSION['loggedin']){
   echo '<p>Welcome '.$_SESSION['name'].'<br><form method="POST" action="logout.php" id="logout"><input type="submit" value="Logout" name="logout" class="btn"></form></p>';
 }
 
+if($_SESSION['level'] === 0){
+  echo 'Admin';
+}
+
 ?>

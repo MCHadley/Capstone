@@ -1,41 +1,22 @@
 <?php
-session_start();
-$id = $_SESSION['id'];
+include('includes/header.php');
+include('includes/navbar.php');
+include('includes/dbClass.php');
+$db = new Db();
+$conn = $db -> connect();
+$userID = $_SESSION['id'];
 
-$count = 0;
 $formElements = $_POST;
+$bookID = $formElements['id'];
+$status = $formElements['status'];
 
-// foreach($formElements as $key => $val){
-//   // $formElements = array();
-//   // print_r($formElements['id']);
-// }
-
-var_dump($formElements['id']);
-var_dump($formElements['status']);
-
-// var_dump($_POST['id'], );
-
-
-
-
-// foreach($_POST as $key => $val){
-//   $count++;
-//   $formElements[] = $val;
-//   echo($formElements);
-   
-// }
-
-
-
-
-
-// if($_POST['submit']){
-//   if($_POST['book'.$count]){
-//     echo($_POST['book'.$count]);
-//   }
-// }
-
-
-
-
+$arrays = array_combine($bookID, $status);
+foreach($arrays as $id => $stat){
+ $query = 'INSERT INTO status(user_id, book_id, stat) VALUES('.$userID.', '.$id.', '.$stat.')';
+  if($conn->query($query) === TRUE){
+    echo 'Your books have been added';
+  }else{
+    echo "Error: Your books have not been added <br>" . $conn->error;
+  }
+}
 ?>

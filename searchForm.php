@@ -9,8 +9,8 @@ $connect = $db->connect();
 //if the search form is filled out correctly submit form
 if(isset($_POST['submit'])){
   //input from form, sanitize input, format it for SQL Query
-  // $input = $_POST['searchBox'];
   $input = $_POST['searchBox'];
+  // $input = 'Wallace';
   $querySan = $db->clean($input);
   $formatQ = '%'.$querySan.'%';
   // SQL Prepared query for id, title, and author. Print query with checkbox and dropdown box to add book to shelf and select reading status
