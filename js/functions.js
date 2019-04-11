@@ -2,6 +2,7 @@ $(document).ready(function(){
  loginDrop();
  sortTable();
  activePage()
+ formValid();
 });
 
 function loginDrop(){
@@ -44,5 +45,19 @@ function activePage(){
   $('.navLinks a').each(function(){
     if($(this).attr('href') == link){
       $(this).addClass('active');}
+  });
+}
+
+function formValid(){
+  $('.register').validate({
+    rules: {
+      firstName: "required",
+      lastName: "required",
+      userName: "required",
+      email: {
+        required: true,
+        email: true
+      }
+    }
   });
 }
