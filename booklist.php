@@ -22,6 +22,7 @@ $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $da
 ?>
 
 <div class="body-three">
+  <a href="addBook.php">Add a book</a>
 <?
 //Create and print table with booklist
 echo('<div class="sort"><a href="#" class="allbooks">All Books</a>

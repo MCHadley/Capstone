@@ -2,7 +2,6 @@
 // Includes
 include('includes/header.php');
 include('includes/navbar.php');
-include('includes/footer.php');
 ?>
 <div class="body-container">
 <?php
@@ -14,3 +13,4 @@ if(!$_SESSION['loggedin']){
 }
 ?>
 </div>
+<? include('includes/footer.php'); ?>
