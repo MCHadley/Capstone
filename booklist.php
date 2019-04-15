@@ -22,7 +22,20 @@ $stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $da
 ?>
 
 <div class="body-three">
-  <a href="addBook.php">Add a book</a>
+<form action="addBook.php" method="POST">
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" placeholder="Title"><br>
+  <label for="authorFirst">Author First Name</label>
+  <input type="text" id="authorFirst" name="authorFirst" placeholder="Author First Name"><br>
+  <label for="authorLast">Author Last Name</label>
+  <input type="text" id="authorLast" name="authorLast" placeholder="Author Last Name"><br>
+  <label for="ISBN">ISBN</label>
+  <input type="text" id="isbn" name="isbn" placeholder="ISBN"><br>
+  <label for="read">Read</label><input type="radio" name="status" value="1">
+  <label for="reading">Reading</label><input type="radio" name="status" value="2">
+  <label for="toread">To-Read</label><input type="radio" name="status" value="3">
+  <input type="submit" id="submit" name="submit" value="Add Book">
+</form>
 <?
 //Create and print table with booklist
 echo('<div class="sort"><a href="#" class="allbooks">All Books</a>
