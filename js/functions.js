@@ -3,6 +3,7 @@ $(document).ready(function(){
  sortTable();
  activePage()
  formValid();
+ formDrop();
 });
 
 function loginDrop(){
@@ -59,5 +60,16 @@ function formValid(){
         email: true
       }
     }
+  });
+}
+
+function formDrop(){
+  $('#addBook').css('display', 'none');
+  $('#addBook').click(function(){
+    $(this).toggleClass('active');
+    $(this).next('#login-content').slideToggle();          
+  });
+  $('#bookLink').click(function(){
+    $('#addBook').slideToggle();
   });
 }

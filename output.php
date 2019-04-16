@@ -19,4 +19,7 @@ foreach($arrays as $id => $stat){
     echo "Error: Your books have not been added <br>" . $conn->error;
   }
 }
+// Delete any books in status with zero
+$stmt = $conn->prepare('DELETE FROM status WHERE stat = 0');
+$stmt->execute();
 ?>

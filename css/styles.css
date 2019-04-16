@@ -88,9 +88,25 @@ nav ul {
   margin: auto;
 }
 
-.body-three form {
+#bookLink {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#bookLink a {
+  border: 2px solid rgb(100, 167, 223);
+  background-color: #F2F0C9;
+  font-weight: bold;
+  color: rgb(22, 79, 126);
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+#addBook {
   text-align: center;
 }
+
 .body-four {
   grid-row: 3;
   grid-column: 1;
@@ -200,6 +216,7 @@ input[type=submit] {
 .sort {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .sort a {
