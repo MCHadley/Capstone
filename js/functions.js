@@ -4,6 +4,7 @@ $(document).ready(function(){
  activePage()
  formValid();
  formDrop();
+ shelfStatus();
 });
 
 function loginDrop(){
@@ -71,5 +72,12 @@ function formDrop(){
   });
   $('#bookLink').click(function(){
     $('#addBook').slideToggle();
+  });
+}
+
+function shelfStatus(){
+  $('.shelf').click(function(){
+    $(this).html('<select name="status"><option value="0"></option><option value="1">Read</option><option value="2">Reading</option><option value="3">To-Read</option>');
+    
   });
 }
