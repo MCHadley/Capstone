@@ -11,14 +11,14 @@ $db = new Db();
 $connect = $db->connect();
 // prepared statments for pulling users book list
 $stmt = $connect->prepare(
-'SELECT books.title, authors.authorFirst, authors.authorLast, books.description, status.stat, books.dateAdded, books.dateFinished 
+'SELECT books.book_id ,books.title, authors.authorFirst, authors.authorLast, books.description, status.stat, books.dateAdded, books.dateFinished 
 from books INNER JOIN status on status.book_id = books.book_id 
 INNER JOIN authors on authors.author_id = books.author 
 WHERE status.user_id = ?;');
 $stmt->bind_param('i', $id);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
+$stmt->bind_result($bookId, $title, $authorFirst, $authorLast, $description, $status, $dateAdded, $dateRead);
 ?>
 
 <div class="body-three">
@@ -72,9 +72,10 @@ while($stmt->fetch()){
               <td class='shelf'>%s</td>
               <td>%s</td>
               <td>%s</td>
+              <td hidden class='bookId'>%s</td>
             </tr>
           ", 
-          $title, $authorName, $shelf, $dateAdded, $dateRead);
+           $title, $authorName, $shelf, $dateAdded, $dateRead, $bookId);
 }
 echo('</table></div>');
 ?>

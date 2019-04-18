@@ -9,6 +9,12 @@ $db = new Db();
 // create db connection
 $conn = $db->connect();
 
-$stmt->prepare('UPDATE status SET stat = ? WHERE user_id = ? AND book_id = ?');
+$status = $_POST['status'];
+$bookId = $_POST['bookId'];
+
+$query = 'UPDATE status SET stat = '.$status.' WHERE user_id = '.$id.' AND book_id ='.$bookId;
+
+if($conn->query($query) === TRUE){
+  header('Location: bookshelf.php');}
 
 ?>

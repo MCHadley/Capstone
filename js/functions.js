@@ -5,6 +5,8 @@ $(document).ready(function(){
  formValid();
  formDrop();
  shelfStatus();
+ updateShelf();
+//  select();
 });
 
 function loginDrop(){
@@ -77,7 +79,32 @@ function formDrop(){
 
 function shelfStatus(){
   $('.shelf').click(function(){
-    $(this).html('<select name="status"><option value="0"></option><option value="1">Read</option><option value="2">Reading</option><option value="3">To-Read</option>');
-    
+    $(this).html('<select name="status" class="status"><option value="0"></option><option value="1">Read</option><option value="2">Reading</option><option value="3">To-Read</option>');
+    });
+}
+
+// function select(){
+//   $('.shelf').change(function(){
+//     var status = $('.status').val();
+//     var bookId = $(this).siblings(":hidden").html();
+//     alert(status);
+//     alert(bookId);
+//   });
+// }
+
+function updateShelf(){
+  $('.shelf').change(function(){
+    var status = $('.status').val();
+    var bookId = $(this).siblings(":hidden").html();
+    $.ajax({
+      type: "POST",
+      url: 'updateStatus.php',
+      data: {status, bookId},
+      success: function(data){
+        if(data.success == true){
+          location.reload();
+        }
+      }
+    })
   });
 }
