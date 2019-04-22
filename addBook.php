@@ -60,5 +60,4 @@ if(isset($title, $authorFirst, $authorLast, $isbn, $status)){
   print('<h1>Please input book info to be added</h1>');
 }
 include('includes/footer.php');
-// Re-direct to bookshelf
 ?>
