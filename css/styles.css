@@ -245,3 +245,7 @@ label.error{
   background: rgb(241, 127, 127);
   text-align: center;
 }
+
+.shelf{
+  text-decoration: underline;
+}
