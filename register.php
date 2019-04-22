@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+// Includes
 include('includes/header.php');
 include('includes/navbar.php');
 ?>

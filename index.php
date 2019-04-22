@@ -1,9 +1,12 @@
 <?php
+// Grab session info and turn off session error
 session_start();
 error_reporting(0);
+// Includes for header, navbar, and database connection
 include('includes/header.php');
 include('includes/navbar.php');
 include('includes/dbClass.php');
+// New database instance and connection
 $db = new Db();
 $connect = $db->connect();
 ?>
@@ -22,10 +25,12 @@ $connect = $db->connect();
   </div>
 <?php
 if(isset($_POST['submit'])){
+  // Get input from form
   $input = $_POST['searchBox'];
+  // Sanitize input and format for query
   $querySan = $db->clean($input);
   $formatQ = '%'.$querySan.'%';
-
+  // Query from form
   $stmt = $connect->prepare("SELECT books.title, authors.authorFirst, authors.authorLast FROM books
   INNER JOIN authors ON authors.author_id = books.author
   WHERE books.title LIKE ? OR authors.authorFirst LIKE ? OR authors.authorLast LIKE ?");
@@ -33,6 +38,7 @@ if(isset($_POST['submit'])){
   $stmt->execute();
   $stmt->store_result();
   $stmt->bind_result($title, $authorFirst, $authorLast);
+  // Print out query in a table
   echo('<div class="body-four"><table><tr>
           <th>Title</th>
           <th>Author</th>
@@ -46,6 +52,7 @@ if(isset($_POST['submit'])){
 }
   echo('</table></div>');
 }
+// ADMIN LEVEL FUNCTION - VIEW USERS
 if($_SESSION['level'] === 0){
   $qry = $connect->prepare('SELECT firstName, lastName, username, email, date_created, type FROM users');
   $qry->execute();

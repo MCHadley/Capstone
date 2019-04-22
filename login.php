@@ -41,7 +41,6 @@ if(isset($_POST['logBtn'])){
     $_SESSION['name'] = $usrName;
     $_SESSION['id'] = $id;
     $_SESSION['level'] = $level;
-    // echo 'Welcome '.$_SESSION['name'].'!';
     header('Location: index.php');
   }else{
     echo 'Incorrect Login';
