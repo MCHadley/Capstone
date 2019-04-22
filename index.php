@@ -1,7 +1,11 @@
 <?php
+session_start();
+error_reporting(0);
 include('includes/header.php');
 include('includes/navbar.php');
 include('includes/dbClass.php');
+$db = new Db();
+$connect = $db->connect();
 ?>
 <div class="body-container">
   <div class="body-one">
@@ -18,8 +22,6 @@ include('includes/dbClass.php');
   </div>
 <?php
 if(isset($_POST['submit'])){
-  $db = new Db();
-  $connect = $db->connect();
   $input = $_POST['searchBox'];
   $querySan = $db->clean($input);
   $formatQ = '%'.$querySan.'%';
@@ -42,11 +44,36 @@ if(isset($_POST['submit'])){
             <td>%s</td>
           </tr>", $title, $authorName);
 }
-echo('</table></div>');
-}else{
-  
+  echo('</table></div>');
 }
-
+if($_SESSION['level'] === 0){
+  $qry = $connect->prepare('SELECT firstName, lastName, username, email, date_created, type FROM users');
+  $qry->execute();
+  $qry->store_result();
+  $qry->bind_result($firstName, $lastName, $user, $email, $dateCreated, $level);
+  echo('<div class="body-four"><table><tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Date Created</th>
+        <th>User Level</th>
+      </tr>');
+  while($qry->fetch()){
+    $name = $firstName." ".$lastName;
+    if($level === 0){
+      $lvlName = 'Admin';
+    }elseif($level === 1){
+      $lvlName = 'User';
+    }
+    printf("<tr>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+              <td>%s</td>
+            </tr>", $name, $user, $email, $dateCreated, $lvlName);
+  }
+}
 include('includes/footer.php');
 ?>
 </div>

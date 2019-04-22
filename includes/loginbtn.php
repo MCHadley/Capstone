@@ -19,7 +19,7 @@ if(!$_SESSION['loggedin']){
 }
 
 if($_SESSION['level'] === 0){
-  echo 'Admin';
+  echo '<small>Admin</small>';
 }
 
 ?>
