@@ -90,10 +90,8 @@ function updateShelf(){
       type: "POST",
       url: 'updateStatus.php',
       data: {status, bookId},
-      success: function(data){
-        if(data.success == true){
-          location.reload();
-        }
+      success: function(){
+        location.reload();
       }
     })
   });
