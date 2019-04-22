@@ -13,8 +13,7 @@ $status = $_POST['status'];
 $bookId = $_POST['bookId'];
 
 $query = 'UPDATE status SET stat = '.$status.' WHERE user_id = '.$id.' AND book_id ='.$bookId;
+$conn->query($query)
 
-if($conn->query($query) === TRUE){
-  header('Location: bookshelf.php');}
 
 ?>
