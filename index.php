@@ -1,7 +1,6 @@
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
-include('includes/footer.php');
 include('includes/dbClass.php');
 ?>
 <div class="body-container">
@@ -47,5 +46,7 @@ echo('</table></div>');
 }else{
   
 }
+
+include('includes/footer.php');
 ?>
 </div>

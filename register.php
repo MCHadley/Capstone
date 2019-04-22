@@ -23,3 +23,4 @@ include('includes/navbar.php');
     </div>
   </body>
 </html>
+<? include('includes/footer.php'); ?>
