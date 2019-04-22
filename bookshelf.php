@@ -7,7 +7,7 @@ include('includes/navbar.php');
 <?php
 include('search.php');
 if(!$_SESSION['loggedin']){
-  echo "<p>Please login or create an account to view your booklist</p>";
+  echo "<p class='message'>Please login or create an account to view your booklist</p>";
 }else{
   include('booklist.php');
 }

@@ -33,7 +33,7 @@ if(isset($_POST['logBtn'])){
 
   // Check if user exists, if not error message, if so check password
   if(!$usrName){
-    exit('You have entered in incorrect login information, please try again');
+    exit('<p class="message">You have entered in incorrect login information, please try again</p>');
     echo('<p><a href="login.html">Return to login page</a></p>');
   }elseif(password_verify($passSan, $hash)){
     session_regenerate_id();
@@ -43,7 +43,7 @@ if(isset($_POST['logBtn'])){
     $_SESSION['level'] = $level;
     header('Location: index.php');
   }else{
-    echo 'Incorrect Login';
+    echo '<p class="message">Incorrect Login</p>';
   }
 }
 

@@ -20,7 +20,7 @@ foreach($arrays as $id => $stat){
   if($conn->query($query) === TRUE){
     header('Location: bookshelf.php');
   }else{
-    echo "Error: Your books have not been added <br>" . $conn->error;
+    echo "<p class='message'>Error: Your books have not been added</p> <br>" . $conn->error;
   }
 }
 // Delete any books in status with zero

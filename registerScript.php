@@ -35,10 +35,10 @@ if(isset($_POST['regSubmit'])){
   // statements to check if user/email exists
   if($userResult){
     if($userResult['username'] === $userSan){
-      array_push($errors, 'That username already exists');
+      array_push($errors, '<p class="message">That username already exists</p>');
     }
     if($userResult['email'] === $emailsSan){
-      array_push($errors, 'That email already exists');
+      array_push($errors, '<p class="message">That email already exists</p>');
     }
     echo implode('<br>', $errors);
   }
@@ -51,7 +51,7 @@ if(isset($_POST['regSubmit'])){
   $queryIn = "INSERT INTO users(username, password, firstName, lastName, email)";
   $queryVa = "VALUES('".$userSan."','".$passSecure."','".$firstSan."','".$lastSan."','".$emailsSan."')";
   $queryFinal = $queryIn.$queryVa;
-  $message = "You have successfully registered";
+  $message = "<p class='message'>You have successfully registered</p>";
   $db->insert($queryFinal, $message);
   }
 }
