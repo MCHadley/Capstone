@@ -116,6 +116,11 @@ nav ul {
   margin: auto;
 }
 
+.body-five table {
+  margin: auto;
+  padding-bottom: 200px;
+}
+
 .body-eight {
   align-items: center;
   grid-column: 2;

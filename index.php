@@ -58,7 +58,7 @@ if($_SESSION['level'] === 0){
   $qry->execute();
   $qry->store_result();
   $qry->bind_result($firstName, $lastName, $user, $email, $dateCreated, $level);
-  echo('<div class="body-four"><table><tr>
+  echo('<div class="body-five"><table><tr>
         <th>Name</th>
         <th>Username</th>
         <th>Email</th>
