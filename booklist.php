@@ -11,7 +11,7 @@ $db = new Db();
 $connect = $db->connect();
 // prepared statments for pulling users book list
 $stmt = $connect->prepare(
-'SELECT books.book_id ,books.title, authors.authorFirst, authors.authorLast, books.description, status.stat, books.dateAdded, books.dateFinished 
+'SELECT books.book_id ,books.title, authors.authorFirst, authors.authorLast, books.description, status.stat, status.dateAdded, status.dateFinished 
 from books INNER JOIN status on status.book_id = books.book_id 
 INNER JOIN authors on authors.author_id = books.author 
 WHERE status.user_id = ?;');

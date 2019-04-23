@@ -12,8 +12,13 @@ $conn = $db->connect();
 $status = $_POST['status'];
 $bookId = $_POST['bookId'];
 
-$query = 'UPDATE status SET stat = '.$status.' WHERE user_id = '.$id.' AND book_id ='.$bookId;
-$conn->query($query)
+if($status == 1){
+  $query1 = 'UPDATE status SET stat = '.$status.', dateFinished = CURDATE() WHERE user_id = '.$id.' AND book_id ='.$bookId;
+  $conn->query($query1);
+}else{
+  $query = 'UPDATE status SET stat = '.$status.' WHERE user_id = '.$id.' AND book_id ='.$bookId;
+  $conn->query($query);
+}
 
 
 ?>

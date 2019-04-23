@@ -34,7 +34,7 @@ if(isset($title, $authorFirst, $authorLast, $isbn, $status)){
   $stmt->store_result();
   $stmt->bind_result($authorID);
   $stmt->fetch();
-  // Insert book
+  // Insert book if status Read and then if normal
   if($status == 1){
     $stmt = $conn->prepare('INSERT INTO books(isbn, title, author, dateAdded, dateFinished) VALUES(?,?,?,?,?)');
     $stmt->bind_param('issss',$isbn, $titleSan, $authorID, $dateAdded, $dateFinished);
