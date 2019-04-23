@@ -201,6 +201,9 @@ input[type=submit] {
 }
 
 .logo {
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 3px 10px 6px black;
   color: #F2F0C9;
   font-family: 'Averia Serif Libre', cursive;
   font-size: 1.7em;
@@ -210,6 +213,7 @@ input[type=submit] {
 .logo p {
   margin-top: 0;
   margin-bottom: 0;
+  
 }
 
 .register input {
