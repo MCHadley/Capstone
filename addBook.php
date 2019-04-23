@@ -34,16 +34,12 @@ if(isset($title, $authorFirst, $authorLast, $isbn, $status)){
   $stmt->store_result();
   $stmt->bind_result($authorID);
   $stmt->fetch();
-  // Insert book if status Read and then if normal
-  if($status == 1){
-    $stmt = $conn->prepare('INSERT INTO books(isbn, title, author, dateAdded, dateFinished) VALUES(?,?,?,?,?)');
-    $stmt->bind_param('issss',$isbn, $titleSan, $authorID, $dateAdded, $dateFinished);
-    $stmt->execute();
-  }else{
-    $stmt = $conn->prepare('INSERT INTO books(isbn, title, author, dateAdded) VALUES(?,?,?,?)');
-    $stmt->bind_param('isss',$isbn, $titleSan, $authorID, $dateAdded);
-    $stmt->execute();
-  }
+
+  // Insert book 
+  $stmt = $conn->prepare('INSERT INTO books(isbn, title, author) VALUES(?,?,?)');
+  $stmt->bind_param('iss',$isbn, $titleSan, $authorID);
+  $stmt->execute();
+  
   // Get book ID
   $stmt = $conn->prepare('SELECT book_id FROM books WHERE isbn = ? AND title = ?');
   $stmt->bind_param('is', $isbn, $titleSan);
@@ -51,11 +47,19 @@ if(isset($title, $authorFirst, $authorLast, $isbn, $status)){
   $stmt->store_result();
   $stmt->bind_result($bookID);
   $stmt->fetch();
+  
   // Insert into status
-  $stmt = $conn->prepare('INSERT INTO status(user_id, book_id, stat) VALUES(?,?,?)');
-  $stmt->bind_param('iii', $id, $bookID, $status);
-  $stmt->execute();
-  header('Location: bookshelf.php');
+  if($status == 1){
+    $stmt = $conn->prepare('INSERT INTO status(user_id, book_id, stat, dateAdded, dateFinished) VALUES(?,?,?,?,?)');
+    $stmt->bind_param('iiiss', $id, $bookID, $status, $dateAdded, $dateFinished);
+    $stmt->execute();
+    header('Location: bookshelf.php');
+  }else{
+    $stmt = $conn->prepare('INSERT INTO status(user_id, book_id, stat) VALUES(?,?,?)');
+    $stmt->bind_param('iii', $id, $bookID, $status);
+    $stmt->execute();
+    header('Location: bookshelf.php');
+  }
 }else{
   print('<h1>Please input book info to be added</h1>');
 }
