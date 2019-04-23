@@ -6,6 +6,7 @@ $(document).ready(function(){
  formDrop();
  shelfStatus();
  updateShelf();
+//  realVerify();
 });
 
 function loginDrop(){
@@ -94,5 +95,14 @@ function updateShelf(){
         location.reload();
       }
     })
+  });
+}
+
+function realVerify(){
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LcJxp8UAAAAAHGGzsAiabWgKa3V1Yp2JG2TU3NN', {action: 'homepage'}).then(function(token) {
+      var response = document.getElementById('recaptchaResponse');
+      response.value = token;
+    });
   });
 }

@@ -19,6 +19,7 @@ include('includes/navbar.php');
       <input type="email" id="email" name="email" placeholder="Email Address" class="form-control" required><br>
       <label for="password" hidden>Password:</label> 
       <input type="password" id="password" name="password" placeholder="Password" class="form-control" required><br>
+      <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
       <input type="submit" value="Register" name="regSubmit" class="btn">
     </form>
     </div>

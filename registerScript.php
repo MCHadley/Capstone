@@ -13,6 +13,7 @@ $lastName = $_POST['lastName'];
 $userName = $_POST['userName'];
 $email = $_POST['email'];
 $pass = $_POST['password'];
+$secretKey = '6LcJxp8UAAAAAHeK12JDAgvTYA3dhNtJG8vGg2Ia';
 
 if(isset($_POST['regSubmit'])){
   // accept input and sanitize
