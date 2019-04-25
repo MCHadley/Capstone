@@ -10,7 +10,7 @@
       <p>BookHub</p>
     </div>
     <div class="three">
-      <a href="lists.php">Bestsellers</a>
+      <a href="#">Forums</a>
     </div>
     <div class="four">
       <ul>
