@@ -32,8 +32,8 @@ nav {
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
   grid-gap: 1em;
-  padding-bottom: 6px;
-  padding-top: 6px;
+  padding-bottom: 12px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -147,13 +147,13 @@ nav ul {
   color: white;
   border-left: 1px solid white;
   border-right: 1px solid white;
-  padding: 1em 1em;
+  padding: 20px 20px;
 }
 
 .navLinks .active {
   color: white;
   border: 0.5px solid white;
-  padding: 1em 1em;
+  padding: 20px 20px;
 }
 
 nav li {
