@@ -12,7 +12,7 @@ $errors = array();
 
 //get variables from login page 
 $username = $_POST['username'];
-$pass = $_POST['password'];
+$pass = $_POST['passwordIn'];
 
 if(isset($_POST['logBtn'])){
   //sanitize data

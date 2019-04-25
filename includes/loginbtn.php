@@ -9,7 +9,7 @@ if(!$_SESSION['loggedin']){
           <div id="login-content">
             <form action="./login.php" method="POST">
               <input id="username" type="text" name="username" placeholder="Username" required><br>
-              <input type="password" id="password" name="password" placeholder="Password" required><br>
+              <input type="password" id="passwordIn" name="passwordIn" placeholder="Password" required><br>
               <input type="submit" id="logBtn" name="logBtn" value="Log in">
             </form>
             <a href="register.php">Register</a>

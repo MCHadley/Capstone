@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
   $stmt->bind_param('sss', $formatQ, $formatQ, $formatQ);
   $stmt->execute();
   $result = $stmt->get_result();
-  echo('<form action="output.php" method="POST"><table>
+  echo('<div id="searchForm"><form action="output.php" method="POST"><table>
           <thead>
             <th></th>
             <th>Title</th>
@@ -47,6 +47,6 @@ if(isset($_POST['submit'])){
           </tr>');
   }
 }
-echo('</table><input type="submit" value="submit" name="submit"></form>');
+echo('</table><input type="submit" value="Submit" name="submit"></form></div>');
 include('includes/footer.php');
 ?>

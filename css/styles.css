@@ -278,3 +278,16 @@ label.error{
   grid-column: 3;
   /* width: 380px; */
 }
+
+#searchForm{
+  padding-top: 80px;
+  display: grid;
+}
+
+#searchForm form{
+  grid-column: 2;
+}
+
+#searchForm input[type=submit]{
+  
+}
