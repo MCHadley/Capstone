@@ -258,3 +258,21 @@ label.error{
 .shelf{
   text-decoration: underline;
 }
+
+#block1{
+  grid-column: 1;
+  /* width: 420px; */
+}
+
+#best-seller-titles{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  grid-column: 2;
+  text-align: center;
+  /* width: 543px; */
+}
+
+#block3{
+  grid-column: 3;
+  /* width: 380px; */
+}

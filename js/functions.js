@@ -7,6 +7,7 @@ $(document).ready(function(){
  shelfStatus();
  updateShelf();
 //  realVerify();
+nytBooks();
 });
 
 function loginDrop(){
@@ -104,5 +105,38 @@ function realVerify(){
       var response = document.getElementById('recaptchaResponse');
       response.value = token;
     });
+  });
+}
+
+function nytBooks(){
+  var apiKey = '7hClboiI1GzOdB9xMRBoqlsxlZVSVAlK';
+  fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + apiKey, {
+    method: 'get',
+  })
+  .then(response => { return response.json(); })
+  .then(json => { updateBestSellers(json); console.log(json)})
+}
+
+function updateBestSellers(nytBooks){
+  nytBooks.results.forEach(function(book){
+    // var isbn = book.isbns[1].isbn10;
+    var bookInfo = book.book_details[0];
+    var lastWeekRank = book.rank_last_week || 'n/a';
+    var weeksOnList = book.weeks_on_list || 'New this week!';
+    // console.log(isbn);
+    var listing = '<div id="' + book.rank + '" class="entry">' + 
+    '<p>' + book.rank + 
+    '</p>' + 
+    '<h2><a href="' + book.amazon_product_url + '" target="_blank">' + bookInfo.title + '</a></h2>' +
+    '<h4>By ' + bookInfo.author + '</h4>' +
+    '<h4 class="publisher">' + bookInfo.publisher + '</h4>' +
+    '<p>' + bookInfo.description + '</p>' + 
+    '<div class="stats">' + 
+      '<p>Last Week: ' + lastWeekRank + '</p>' + 
+      '<p>Weeks on list: ' + weeksOnList + '</p>' +
+      '<hr>' +
+    '</div>' +
+  '</div>';
+  $('#best-seller-titles').append(listing);
   });
 }
