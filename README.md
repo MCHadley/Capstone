@@ -5,7 +5,8 @@ Welcome to my final project for my Web and Software development program. The goa
 
 Build Status
 ---
-This is 1.0. I'll be working on 2.0 and adding more features this summer while I job-search
+This is 1.0. I'll be working on 2.0 and adding more features this summer while I job-search. 
+Expected features: Cover Images, Modal window with book info, forums, google books search
 
 Framework
 ---
