@@ -219,9 +219,14 @@ input[type=submit] {
 }
 
 .register input {
-  margin: 10px;
+  display: block;
+  /* margin: 10px; */
   padding: 10px;
   width: 200px;
+}
+
+.register .btn{
+  margin-left: 10px;
 }
 
 .sort {
@@ -286,8 +291,4 @@ label.error{
 
 #searchForm form{
   grid-column: 2;
-}
-
-#searchForm input[type=submit]{
-  
 }
