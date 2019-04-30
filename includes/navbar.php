@@ -7,7 +7,7 @@
       <a href="bookshelf.php">Bookshelf</a>
     </div>
     <div class="logo">
-      <p>BookHub</p>
+      <h1>BookHub</h1>
     </div>
     <div class="three">
       <a href="bestsellers.php">Bestsellers</a>
