@@ -79,6 +79,7 @@ function formDrop(){
 }
 
 function shelfStatus(){
+  $('.shelf').css('cursor', 'pointer');
   $('.shelf').one('click',(function(){
     $(this).html('<form><select name="status" class="status"><option value="0"></option><option value="1">Read</option><option value="2">Reading</option><option value="3">To-Read</option></select></form>');
     }));
@@ -119,11 +120,9 @@ function nytBooks(){
 
 function updateBestSellers(nytBooks){
   nytBooks.results.forEach(function(book){
-    // var isbn = book.isbns[1].isbn10;
     var bookInfo = book.book_details[0];
     var lastWeekRank = book.rank_last_week || 'n/a';
     var weeksOnList = book.weeks_on_list || 'New this week!';
-    // console.log(isbn);
     var listing = '<div id="' + book.rank + '" class="entry">' + 
     '<p>' + book.rank + 
     '</p>' + 
