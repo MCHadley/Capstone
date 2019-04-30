@@ -17,7 +17,7 @@ $connect = $db->connect();
     <p>Books are added by users and you can add them to your lists!</p>
   </div>
   <div class="body-two">
-    <form method="POST" action="">
+    <form method="POST">
     <label for="searchBox" hidden>Search for a book</label>
       <input type="text" id="searchBox" name="searchBox" class="form-control"
         placeholder="Search for a book by title or author!">
@@ -82,6 +82,6 @@ if($_SESSION['level'] === 0){
             </tr>", $name, $user, $email, $dateCreated, $lvlName);
   }
 }
-include('includes/footer.php');
 ?>
 </div>
+<? include('includes/footer.php'); ?>
