@@ -56,4 +56,9 @@ if(isset($_POST['regSubmit'])){
   $db->insert($queryFinal, $message);
   }
 }
+$to = $emailsSan;
+$subject = 'BookHub Registration';
+$message = 'You have successfully registered for BookHub!';
+mail($to, $subject, $message);
+
 ?>
