@@ -202,6 +202,10 @@ input[type=submit] {
   width: 200px;
 }
 
+fieldset {
+  border: none;
+}
+
 .logo {
   border: 1px solid;
   border-radius: 5px;

@@ -8,7 +8,9 @@ if(!$_SESSION['loggedin']){
   echo ('<a id="login-trigger" href="#">Log-in/Register</a>
           <div id="login-content">
             <form action="./login.php" method="POST">
+              <label for="username" hidden>Username</label>
               <input id="username" type="text" name="username" placeholder="Username" required><br>
+              <label for="passwordIn" hidden>Password</label>
               <input type="password" id="passwordIn" name="passwordIn" placeholder="Password" required><br>
               <input type="submit" id="logBtn" name="logBtn" value="Log in">
             </form>

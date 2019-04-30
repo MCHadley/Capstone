@@ -33,11 +33,13 @@ $stmt->bind_result($bookId, $title, $authorFirst, $authorLast, $status, $dateAdd
       <input type="text" id="authorFirst" name="authorFirst" placeholder="Author First Name"><br>
       <label for="authorLast" hidden>Author Last Name</label>
       <input type="text" id="authorLast" name="authorLast" placeholder="Author Last Name"><br>
-      <label for="ISBN" hidden>ISBN</label>
+      <label for="isbn" hidden>ISBN</label>
       <input type="text" id="isbn" name="isbn" placeholder="ISBN"><br>
-      <label for="read">Read</label><input type="radio" name="status" value="1"><br>
-      <label for="reading">Reading</label><input type="radio" name="status" value="2"><br>
-      <label for="toread">To-Read</label><input type="radio" name="status" value="3"><br>
+      <fieldset>
+        <label for="read">Read</label><input type="radio" id="read" name="status" value="1"><br>
+        <label for="reading">Reading</label><input type="radio" id="reading" name="status" value="2"><br>
+        <label for="toread">To-Read</label><input type="radio" id="toread" name="status" value="3"><br>
+      </fieldset>
       <input type="submit" id="submit" name="submit" value="Add Book">
     </form>
   </div>
