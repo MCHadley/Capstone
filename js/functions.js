@@ -7,7 +7,7 @@ $(document).ready(function(){
  shelfStatus();
  updateShelf();
  realVerify();
-nytBooks();
+  nytBooks();
 });
 
 function loginDrop(){ // Dropdown box for the login form on the navbar
