@@ -110,12 +110,16 @@ function realVerify(){ // Google captcha
 }
 
 function nytBooks(){ // Get NYT Bestsellers
-  var apiKey = '7hClboiI1GzOdB9xMRBoqlsxlZVSVAlK';
-  fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + apiKey, {
-    method: 'get',
-  })
-  .then(response => { return response.json(); })
-  .then(json => { updateBestSellers(json); console.log(json)})
+  var url = window.location.pathname;
+  var link = url.substr(url.lastIndexOf('/') + 1);
+  if(link === 'bestsellers.php'){
+    var apiKey = '7hClboiI1GzOdB9xMRBoqlsxlZVSVAlK';
+    fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + apiKey, {
+      method: 'get',
+    })
+    .then(response => { return response.json(); })
+    .then(json => { updateBestSellers(json); console.log(json)})
+  }
 }
 
 function updateBestSellers(nytBooks){ // Print NYT Bestseller list
