@@ -1,4 +1,5 @@
 # Don't track files
 dbaconfig.php
-.DS_Store
 config.ini
+.DS_Store
+.DS_Store
