@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500"');
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
+
+body {
+  margin: 0;
+  background: #f9f7f4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input:focus::-webkit-input-placeholder{
+  color: transparent!important;
+}
+input:focus::-moz-placeholder{
+  color: transparent!important;
+}
+input:focus:-moz-placeholder{
+  color: transparent!important;
+}
+
+.body-container {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  grid-template-columns: auto;
+}
+
+nav {
+  align-items: center;
+  background:  #21333F;
+  border-bottom: 4px solid black;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  grid-template-columns: repeat(5, 1fr);
+  padding-bottom: 12px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+nav ul {
+  padding: 0;
+}
+
+.one {
+  grid-column: 1;
+}
+
+.two {
+  grid-column: 2;
+}
+
+.logo {
+  grid-column: 3;
+}
+
+.three {
+  grid-column: 4;
+}
+
+.four {
+  grid-column: 5;
+}
+
+.body-one {
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.body-one form {
+  background-color: rgb(201, 218, 230);
+  border: 1px solid rgb(137, 160, 175);
+  display: inline-block;
+  margin-bottom: 300px;
+  padding: 50px;
+}
+
+.body-two {
+  align-items: center;
+  text-align: center;
+}
+
+.body-three {
+  align-items: center;
+  grid-row: 2;
+  width: auto;
+}
+
+.body-three table {
+  margin: auto;
+}
+
+#bookLink {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#bookLink a {
+  border: 2px solid rgb(100, 167, 223);
+  background-color: #F2F0C9;
+  color: rgb(22, 79, 126);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+#addBook {
+  text-align: center;
+}
+
+.body-four {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.body-four table {
+  margin: auto;
+}
+
+.body-five table {
+  margin: auto;
+  padding-bottom: 200px;
+}
+
+.body-eight {
+  align-items: center;
+  grid-column: 2;
+  grid-row: 3;
+  width: 700px;
+}
+
+.body-eight table {
+  padding-left: 100px;
+}
+
+.navLinks a {
+  color: #F2F0C9;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  font-weight: lighter;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navLinks a:hover {
+  color: white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 20px 20px;
+}
+
+.navLinks .active {
+  color: white;
+  border: 0.5px solid white;
+  padding: 20px 20px;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+#login {
+  color: #F2F0C9;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#login a {
+  color: #F2F0C9;
+}
+
+#login-content {
+  display: none;
+}
+
+#login-content a {
+  text-decoration: underline;
+  text-transform: none;
+  font-size: 15px;
+}
+
+input[type=submit] {
+  background-color:rgb(119, 170, 211);
+  border: 1px solid black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 9px 9px;
+  text-align: center;
+}
+
+#login-trigger {
+  font-size: 19px;
+  text-decoration: none;
+}
+
+#searchBox {
+  width: 200px;
+}
+
+fieldset {
+  border: none;
+}
+
+.logo {
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 3px 10px 6px black;
+  color: #F2F0C9;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 1.7em;
+  text-decoration: none;
+}
+
+.logo h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+.register input {
+  display: block;
+  padding: 10px;
+  width: 200px;
+}
+
+.register .btn{
+  margin-left: 10px;
+}
+
+.sort {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.sort a {
+  border: 2px solid rgb(100, 167, 223);
+  background-color: #F2F0C9;
+  color: rgb(22, 79, 126);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+}
+
+td {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+label.error{
+  border: 1px solid #0000;
+  background: rgb(241, 127, 127);
+  display: block;
+  font-size: 12px;
+}
+
+.message{
+  border: 1px solid #0000;
+  background: rgb(241, 127, 127);
+  text-align: center;
+}
+
+.shelf{
+  text-decoration: underline;
+}
+
+#block1{
+  grid-column: 1;
+}
+
+#best-seller-titles{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  grid-column: 2;
+  text-align: center;
+}
+
+#block3{
+  grid-column: 3;
+}
+
+#searchForm{
+  padding-top: 80px;
+  display: grid;
+}
+
+#searchForm form{
+  grid-column: 2;
+}
