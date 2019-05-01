@@ -6,7 +6,7 @@ $(document).ready(function(){
  formDrop();
  shelfStatus();
  updateShelf();
-//  realVerify();
+ realVerify();
 nytBooks();
 });
 
