@@ -11,7 +11,6 @@ class Db {
       echo("Could not connect to the database");
       return mysqli_connect_error();
     }else{
-      // echo("You are connected to the database");
       return $connection;
     }
  

@@ -56,6 +56,7 @@ if(isset($_POST['regSubmit'])){
   $db->insert($queryFinal, $message);
   }
 }
+// Email confirmation of registeration
 $to = $emailsSan;
 $subject = 'BookHub Registration';
 $message = 'You have successfully registered for BookHub!';

@@ -15,7 +15,7 @@ $dateAdded = date('Y-m-d');
 // Split into seperate arrays
 $bookID = $formElements['id'];
 $status = $formElements['status'];
-// Recombine witk Book ID as key and Status as value
+// Recombine with Book ID as key and Status as value
 $arrays = array_combine($bookID, $status);
 foreach($arrays as $id => $stat){
  $query = 'INSERT INTO status(user_id, book_id, stat, dateAdded) VALUES('.$userID.', '.$id.', '.$stat.', CURDATE())';

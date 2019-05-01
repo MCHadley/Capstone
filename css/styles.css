@@ -19,9 +19,9 @@ input:focus:-moz-placeholder{
 
 .body-container {
   display: grid;
-  grid-template-columns: auto;
   grid-auto-rows: auto;
   grid-gap: 1em;
+  grid-template-columns: auto;
 }
 
 nav {
@@ -29,9 +29,9 @@ nav {
   background:  #21333F;
   border-bottom: 4px solid black;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
   grid-gap: 1em;
+  grid-template-columns: repeat(5, 1fr);
   padding-bottom: 12px;
   padding-top: 10px;
   text-align: center;
@@ -98,8 +98,8 @@ nav ul {
 #bookLink a {
   border: 2px solid rgb(100, 167, 223);
   background-color: #F2F0C9;
-  font-weight: bold;
   color: rgb(22, 79, 126);
+  font-weight: bold;
   padding: 10px;
   text-decoration: none;
 }
@@ -135,12 +135,12 @@ nav ul {
 }
 
 .navLinks a {
+  color: #F2F0C9;
   font-family: 'Montserrat', sans-serif;
   font-size: 19px;
   font-weight: lighter;
-  text-transform: uppercase;
   text-decoration: none;
-  color: #F2F0C9;
+  text-transform: uppercase;
 }
 
 .navLinks a:hover {
@@ -161,12 +161,12 @@ nav li {
 }
 
 #login {
+  color: #F2F0C9;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
-  text-transform: uppercase;
-  color: #F2F0C9;
   list-style-type: none;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 #login a {
@@ -178,9 +178,9 @@ nav li {
 }
 
 #login-content a {
+  text-decoration: underline;
   text-transform: none;
   font-size: 15px;
-  text-decoration: underline;
 }
 
 input[type=submit] {
@@ -194,8 +194,8 @@ input[type=submit] {
 }
 
 #login-trigger {
-  text-decoration: none;
   font-size: 19px;
+  text-decoration: none;
 }
 
 #searchBox {
@@ -224,7 +224,6 @@ fieldset {
 
 .register input {
   display: block;
-  /* margin: 10px; */
   padding: 10px;
   width: 200px;
 }
@@ -242,8 +241,8 @@ fieldset {
 .sort a {
   border: 2px solid rgb(100, 167, 223);
   background-color: #F2F0C9;
-  font-weight: bold;
   color: rgb(22, 79, 126);
+  font-weight: bold;
   padding: 10px;
   text-decoration: none;
 }
@@ -272,7 +271,6 @@ label.error{
 
 #block1{
   grid-column: 1;
-  /* width: 420px; */
 }
 
 #best-seller-titles{
@@ -280,12 +278,10 @@ label.error{
   border-right: 1px solid black;
   grid-column: 2;
   text-align: center;
-  /* width: 543px; */
 }
 
 #block3{
   grid-column: 3;
-  /* width: 380px; */
 }
 
 #searchForm{
