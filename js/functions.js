@@ -10,7 +10,7 @@ $(document).ready(function(){
 nytBooks();
 });
 
-function loginDrop(){
+function loginDrop(){ // Dropdown box for the login form on the navbar
   $('#login-trigger').click(function(){
     $(this).toggleClass('inactive');
     $(this).next('#login-content').slideToggle();          
@@ -20,23 +20,23 @@ function loginDrop(){
   });
 }
 
-function sortTable(){
+function sortTable(){ // Sorting for booklist
   $('.allbooks').click(function(){
     $('tr').show();
   });
-  $('.read').click(function(){
+  $('.read').click(function(){ // Show read books
     $('tr').show();
     $('table').find('tr').each(function(){
       $('tr:contains("Currently Reading"), tr:contains("To-Read")').hide();
     }); 
   });
-  $('.reading').click(function(){
+  $('.reading').click(function(){ // Show reading books
     $('table').find('tr').each(function(){
       $('tr').not(':first-of-type').hide();
       $('tr:contains("Reading")').show();
     });
   });
-  $('.toread').click(function(){
+  $('.toread').click(function(){ // Show books to be read
     $('table').find('tr').each(function(){
       $('tr').not(':first-of-type').hide();
       $('tr:contains("To-Read")').show();
@@ -44,7 +44,7 @@ function sortTable(){
   });
 }
 
-function activePage(){
+function activePage(){ // Highlight active link
   var url = window.location.pathname;
   var link = url.substr(url.lastIndexOf('/') + 1);
   $('.navLinks a').each(function(){
@@ -53,7 +53,7 @@ function activePage(){
   });
 }
 
-function formValid(){
+function formValid(){ // form validation
   $('.register').validate({
     rules: {
       firstName: "required",
@@ -67,7 +67,7 @@ function formValid(){
   });
 }
 
-function formDrop(){
+function formDrop(){ // dropdown for adding book in bookshelf
   $('#addBook').css('display', 'none');
   $('#addBook').click(function(){
     $(this).toggleClass('active');
@@ -78,14 +78,14 @@ function formDrop(){
   });
 }
 
-function shelfStatus(){
+function shelfStatus(){ // changes book shelf TD to dropdown with status
   $('.shelf').css('cursor', 'pointer');
   $('.shelf').one('click',(function(){
     $(this).html('<form><select name="status" class="status"><option value="0"></option><option value="1">Read</option><option value="2">Reading</option><option value="3">To-Read</option></select></form>');
     }));
 }
 
-function updateShelf(){
+function updateShelf(){ // updates book status on click
   $('.shelf').change(function(){
     var status = $('.status').val();
     var bookId = $(this).siblings(":hidden").html();
@@ -100,7 +100,7 @@ function updateShelf(){
   });
 }
 
-function realVerify(){
+function realVerify(){ // Google captcha
   grecaptcha.ready(function() {
     grecaptcha.execute('6LcJxp8UAAAAAHGGzsAiabWgKa3V1Yp2JG2TU3NN', {action: 'homepage'}).then(function(token) {
       var response = document.getElementById('recaptchaResponse');
@@ -109,7 +109,7 @@ function realVerify(){
   });
 }
 
-function nytBooks(){
+function nytBooks(){ // Get NYT Bestsellers
   var apiKey = '7hClboiI1GzOdB9xMRBoqlsxlZVSVAlK';
   fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + apiKey, {
     method: 'get',
@@ -118,7 +118,7 @@ function nytBooks(){
   .then(json => { updateBestSellers(json); console.log(json)})
 }
 
-function updateBestSellers(nytBooks){
+function updateBestSellers(nytBooks){ // Print NYT Bestseller list
   nytBooks.results.forEach(function(book){
     var bookInfo = book.book_details[0];
     var lastWeekRank = book.rank_last_week || 'n/a';
